@@ -46,15 +46,44 @@ p{
     font-size: 15px;
 }
 
-/* Responsive */
+
+nav .nav {
+    flex-wrap: nowrap;
+}
+
 @media (max-width: 768px) {
-    .logo img {
-        height: 50px;
-    }
-    .header-bottom{
-        height: 70px;
+    nav .nav {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
+
+.btn-darkmode {
+    background: #000;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    color:#fff;
+}
+
+.btn-darkmode:hover {
+    background: #ff6600;
+    color: #000;
+}
+
+
+.lang-flag {
+    cursor: pointer;
+    font-size: 20px;
+    transition: .2s;
+}
+
+.lang-flag:hover {
+    transform: scale(1.1);
+}
+
 
 /*------------ Silder ------------*/
 
