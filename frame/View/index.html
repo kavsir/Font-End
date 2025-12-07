@@ -12,24 +12,24 @@
 <body>
 
 <header id="header" class="header shadow-sm">
-    <div class="header-bottom fixed-top bg-white">
+    <div class="header-bottom fixed-top">
         <div class="container">
             <div class="d-flex align-items-center justify-content-between py-2">
 
                 <!-- Logo -->
                 <div class="logo d-flex align-items-center">
                     <a href="#" class="d-block">
-                        <img src="/frame/Storage_Img/login-img/Logo-img.webp" alt="Logo" style="height: 60px;">
+                        <img class="" src="/frame/Storage_Img/login-img/Logo-img.webp" alt="Logo" style="height: 60px;">
                     </a>
                 </div>
 
                 <!-- Menu -->
                 <nav>
                     <ul class="nav">
-                        <li class="mx-2"><a href="#" class="nav-link text-dark fw-semibold">Sản Phẩm</a></li>
-                        <li class="mx-2"><a href="#" class="nav-link text-dark fw-semibold">Phụ kiện</a></li>
-                        <li class="mx-2"><a href="#" class="nav-link text-dark fw-semibold">Dịch vụ hậu mãi</a></li>
-                        <li class="mx-2"><a href="#" class="nav-link text-dark fw-semibold">Tin tức</a></li>
+                        <li class="mx-2"><a href="#" class="nav-link  fw-semibold">Sản Phẩm</a></li>
+                        <li class="mx-2"><a href="#" class="nav-link  fw-semibold">Phụ kiện</a></li>
+                        <li class="mx-2"><a href="#" class="nav-link  fw-semibold">Dịch vụ hậu mãi</a></li>
+                        <li class="mx-2"><a href="#" class="nav-link  fw-semibold">Tin tức</a></li>
                     </ul>
                 </nav>
 
@@ -43,8 +43,8 @@
 
 
                     <!-- Nút Dark Mode -->
-                    <button id="darkModeToggle" class="btn-darkmode ms-3">
-                        Dark Mode
+                    <button id="toggleDark" class="btn-darkmode ms-3">
+                        Dark
                     </button>
                 </div>
 
@@ -53,10 +53,11 @@
     </div>
 </header>
 <div id="slider" class="slider-wrapper">
-    <a href="#">
-        <img src="/frame/Storage_Img/slider-img/silder-index-img.jpg" 
+    <a href="#" >
+        <img id="slider-img" src="/frame/Storage_Img/slider-img/silder-index-img.jpg" 
              alt="Slider" 
              class="slider-img">
+
     </a>
 </div>
 <div class="section-bestSale">
@@ -225,7 +226,7 @@
 
             <div class="checkbox-area">
                 <input type="checkbox" name="agree" id="agree" style="padding: 20px;width: 40px;height: 26px;" required>
-                <span>
+                <span style="color: var(--text); font-size:16px;">
                     Tôi đồng ý cho phép đội IoT City xử lý dữ liệu cá nhân của tôi và các thông tin khác do tôi cung cấp cho mục đích và theo phương thức được mô tả chi tiết tại 
                     <a href="#">Chính sách Bảo vệ Dữ liệu cá nhân</a>.
                 </span>
@@ -283,8 +284,10 @@
     </div>
     
 </footer>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/frame/javacrip/index.js"></script>
+
 
 </body>
+
 </html>

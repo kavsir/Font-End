@@ -222,3 +222,13 @@ nav .nav {
 td,th{
     text-align: center !important;
 }
+
+th{
+    
+    border: 1px #000 solid;
+    background: #ff6600 !important;
+}
+
+td{
+        border: 1px #000 solid;
+}
