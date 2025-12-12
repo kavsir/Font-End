@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/frame/Style/index.css">
     <link rel="stylesheet" href="/frame/lb/themify-icons/themify-icons.css">
     <link rel="stylesheet" href="/frame/lb/flag-icons-main/css/flag-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 </head>
 <body>
 
@@ -26,22 +28,27 @@
                 <!-- Menu -->
                 <nav>
                     <ul class="nav">
-                        <li class="mx-2"><a href="#" class="nav-link  fw-semibold" data-lang-key="menu_products">Sản Phẩm</a></li>
-                        <li class="mx-2"><a href="#" class="nav-link  fw-semibold" data-lang-key="menu_accessories">Phụ kiện</a></li>
-                        <li class="mx-2"><a href="#" class="nav-link  fw-semibold" data-lang-key="menu_service">Dịch vụ</a></li>
-                        <li class="mx-2"><a href="#" class="nav-link  fw-semibold" data-lang-key="menu_news">Tin tức</a></li>
+                       <li class="mx-2"><a href="#section-products" class="nav-link  fw-semibold" data-lang-key="menu_products">Sản Phẩm</a></li>
+                        <li class="mx-2"><a href="#section-contact" class="nav-link  fw-semibold" data-lang-key="menu_service">Liên hệ</a></li>
+                        <li class="mx-2"><a href="#footer" class="nav-link  fw-semibold" data-lang-key="menu_news">Thông tin</a></li>
+                        <div>
+                            <div class="input-group">
+                                <input type="text" id="searchInput" class="form-control" placeholder="Tìm kiếm sản phẩm...">
+                                <button class="btn" style="background: #ff6600; color:#fff;font-weight:600" id="btnSearch">Tìm</button>
+                            </div>
+                        </div>
                     </ul>
+                    
                 </nav>
 
-                <div class="account d-flex align-items-center">
+                
+                    <div class="account d-flex align-items-center">
                     <div class="fw-semibold me-3">
-                        <a href="" class="nav-link" data-lang-key="account">Tài khoản</a>
+                        <a href="./login.html" class="nav-link">Đăng xuất</a>
                     </div>
 
                     <span id="langVN" class="fi fi-vn lang-flag" data-lang="vn"></span>
                     <span id="langEN" class="fi fi-gb lang-flag ms-2" data-lang="en"></span>
-
-
                     <!-- Nút Dark Mode -->
                     <button id="toggleDark" class="btn-darkmode ms-3" data-lang-key="dark" style="width: 60px;">
                         Dark
@@ -52,167 +59,64 @@
         </div>
     </div>
 </header>
+
 <div id="slider" class="slider-wrapper">
-    <a href="#" >
+    <a href="#">
         <img id="slider-img" src="/frame/Storage_Img/slider-img/silder-index-img.jpg" 
              alt="Slider" 
              class="slider-img">
-
     </a>
 </div>
-<div class="section-bestSale">
+
+<!-- Best sale -->
+<div id="section-products" class="section-bestSale">
     <div class="container">
         <div class="section-content">
-            <div class="bestSale-header">
-                <h2 class="bestSale-heading" data-lang-key="heading_best_sale">SẢN PHẨM BÁN CHẠY</h2>
+
+            <div class="bestSale-header align-items-center justify-content-between">
+                <h2 class="bestSale-heading mb-0" data-lang-key="heading_best_sale">SẢN PHẨM</h2>
             </div>
-            <!-- in ra 3 loại sản phẩm  -->
-            <div class="row bestSale-list" id="bestSale-list">
 
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="product-card">
-                        <a href=""><img src="/frame/Storage_Img/product-img/product1.jpg" alt=""></a>
-                        <a href=""><h3 class="product-title">Tên sản phẩm 1</h3></a>
-                        <div class="buy">
-                            <p class="product-price">350.000đ</p>
-                            <a href="/product/detail/1" class="btn-buy" data-lang-key="buy_now" >Mua ngay</a>
-                        </div>
-                        
-                    </div>
-                </div>
+            <div class="btn-filter-group">
+                <button id="btnShowFavorites" class="btn btn-filter">
+                    Chỉ xem yêu thích
+                </button>
 
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="product-card">
-                        <a href=""><img src="/frame/Storage_Img/product-img/product1.jpg" alt=""></a>
-                        <a href=""><h3 class="product-title">Tên sản phẩm 2</h3></a>
-                        <div class="buy">
-                            <p class="product-price">350.000đ</p>
-                            <a href="/product/detail/1" class="btn-buy" data-lang-key="buy_now">Mua ngay</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="product-card">
-                        <a href=""><img src="/frame/Storage_Img/product-img/product1.jpg" alt=""></a>
-                        <a href=""><h3 class="product-title">Tên sản phẩm 3</h3></a>
-                        <div class="buy">
-                            <p class="product-price">350.000đ</p>
-                            <a href="/product/detail/1" class="btn-buy" data-lang-key="buy_now">Mua ngay</a>
-                        </div>
-                    </div>
-                </div>
-
+                <button id="btnShowAll" class="btn btn-filter ms-2">
+                    Xem tất cả
+                </button>
             </div>
+
+
+            <div class="row bestSale-list" id="bestSale-list"></div>
+
         </div>
     </div>
 </div>
 
-<div id="section-discover" style="margin-bottom: 64px;">
+
+
+<!-- <div id="section-discover" style="margin-bottom: 64px;">
     <div class="container">
         <div class="section-content" style="margin: 0 auto;">
             <div class="discover-head" style="margin-bottom: 24px;">
                 <h2 class="discover-title">
-                    <span style="font-size: 16px;line-height: 1.5;" class="d-block discover-heading" data-lang-key="heading_discover" >KHÁM PHÁ</span>
+                    <span style="font-size: 16px;line-height: 1.5;" class="d-block discover-heading" data-lang-key="heading_discover">Blog về chúng tôi</span>
                 </h2>
             </div>
             <div class="discover-main">
-                <div class="discover-list row g-4" id="discover-list">
 
-                    <!-- Product item -->
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="discover-product-card">
-                            <a href="/discover-product/detail/1">
-                                <img src="/frame/Storage_Img/product-img/product1.jpg" alt="">
-                            </a>
-
-                            <a href="/product/detail/1">
-                                <h3 class="product-title">Tên sản phẩm 1</h3>
-                            </a>
-
-                            <div class="buy">
-                                <p class="product-price">350.000đ</p>
-                                <a href="/product/detail/1" class="btn-buy" data-lang-key="buy_now">Mua ngay</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="discover-product-card">
-                            <a href="/discover-product/detail/1">
-                                <img src="/frame/Storage_Img/product-img/product1.jpg" alt="">
-                            </a>
-
-                            <a href="/product/detail/1">
-                                <h3 class="product-title">Tên sản phẩm 1</h3>
-                            </a>
-
-                            <div class="buy">
-                                <p class="product-price">350.000đ</p>
-                                <a href="/product/detail/1" class="btn-buy" data-lang-key="buy_now">Mua ngay</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="discover-product-card">
-                            <a href="/discover-product/detail/1">
-                                <img src="/frame/Storage_Img/product-img/product1.jpg" alt="">
-                            </a>
-
-                            <a href="/product/detail/1">
-                                <h3 class="product-title">Tên sản phẩm 1</h3>
-                            </a>
-
-                            <div class="buy">
-                                <p class="product-price">350.000đ</p>
-                                <a href="/product/detail/1" class="btn-buy" data-lang-key="buy_now">Mua ngay</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="discover-product-card">
-                            <a href="/discover-product/detail/1">
-                                <img src="/frame/Storage_Img/product-img/product1.jpg" alt="">
-                            </a>
-
-                            <a href="/product/detail/1">
-                                <h3 class="product-title">Tên sản phẩm 1</h3>
-                            </a>
-
-                            <div class="buy">
-                                <p class="product-price">350.000đ</p>
-                                <a href="/product/detail/1" class="btn-buy" data-lang-key="buy_now">Mua ngay</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="discover-product-card">
-                            <a href="/discover-product/detail/1">
-                                <img src="/frame/Storage_Img/product-img/product1.jpg" alt="">
-                            </a>
-
-                            <a href="/product/detail/1">
-                                <h3 class="product-title">Tên sản phẩm 1</h3>
-                            </a>
-
-                            <div class="buy">
-                                <p class="product-price">350.000đ</p>
-                                <a href="/product/detail/1" class="btn-buy" data-lang-key="buy_now">Mua ngay</a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+                <div class="discover-list row g-4" id="discover-list"></div>
             </div>
         </div>
     </div>
-</div>
-<div class="section-lead-common">
+</div> -->
+
+<div id="section-contact" class="section-lead-common">
     <div class="container">
         <div class="section-content">
-            <p class="title" data-lang-key="consultation">
-                Đăng ký tư vấn
-            </p>
-            <p style="max-width: 435px; margin: 0 auto 30px;    font-style: italic;" class="intro" data-lang-key="intro" >
+            <p class="title" data-lang-key="consultation">Đăng ký tư vấn</p>
+            <p style="max-width: 435px; margin: 0 auto 30px; font-style: italic;" class="intro" data-lang-key="intro">
                 Đăng ký ngay hôm nay để nhận thông tin chính thức và tư vấn từ đội IoT City
             </p>
         </div>
@@ -221,16 +125,14 @@
             <input type="text" name="FullNam" id="FullNam" data-lang-placeholder="fullname_placeholder" required>
             <input type="date" name="date" id="date" required>
             <input type="number" name="number" id="number" data-lang-placeholder="phone_placeholder" required>
-
             <input type="email" name="email" id="email" data-lang-placeholder="email_placeholder" required>
 
             <div class="checkbox-area">
                 <input type="checkbox" name="agree" id="agree" style="padding: 20px;width: 40px;height: 26px;" required>
                 <span style="color: var(--text); font-size:16px;">
-                <span data-lang-key="commit_agree">Tôi đồng ý cho phép đội IoT City xử lý dữ liệu cá nhân của tôi và các thông tin khác do tôi cung cấp cho mục đích và theo phương thức được mô tả chi tiết tại</span>
+                <span data-lang-key="commit_agree">Tôi đồng ý cho phép đội IoT City xử lý dữ liệu cá nhân...</span>
                 <a href="#" data-lang-key="commit_private">Chính sách Bảo vệ Dữ liệu cá nhân</a>.
-            </span>
-
+                </span>
             </div>
 
             <button type="submit" data-lang-key="submit">Đăng ký</button>
@@ -239,7 +141,7 @@
     </div>
 </div>
 
-<footer>
+<footer id="footer">
     <div class="container">
         <div class="row footer-bottom">
             <div class="col-12 col-lg-4">
@@ -247,11 +149,12 @@
                     <img src="/frame/Storage_Img/login-img/Logo-img.webp" alt="" style="height: 100px; margin-bottom:30px">
                 </a>
                 <p class="company-name" data-lang-key="greeting">ĐỘI IOT CITY ĐẾN TỪ CNTT 17-01 NGHÊNH CHIẾN </p>
-                <P data-lang-key="address">
+                <p data-lang-key="address">
                     <strong>Địa chỉ trụ sở chính: </strong>
-                    Phòng Lab AIoT, Trường Đại học Đại Nam - Số 1 phố Xốm – phường Phú Lương – TP. Hà Nội
-                </P>
+                    Phòng Lab AIoT, Trường Đại học Đại Nam...
+                </p>
             </div>
+
             <div class="col-12 col-lg-8">
                 <h2 class="member-heading" data-lang-key="IoT_City">Đội IoT City</h2>
                 <div class="we-member">
@@ -263,6 +166,7 @@
                             <li class="facebook-member"><i class="btn-icon ti-facebook"></i>facebook.com/Kvasir.04/</li>
                         </ul>
                     </div>
+
                     <div class="member">
                         <ul>
                             <li class="name-member">Trần Anh Tú</li>
@@ -271,6 +175,7 @@
                             <li class="facebook-member"><i class="btn-icon ti-facebook"></i>facebook.com//</li>
                         </ul>
                     </div>
+
                     <div class="member">
                         <ul>
                             <li class="name-member">Nguyễn Quang Vinh</li>
@@ -283,11 +188,10 @@
             </div> 
         </div>
     </div>
-    
 </footer>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="/frame/javacrip/index.js"></script>
 <script src="/frame/lang/lang.js"></script>
 </body>
-
 </html>

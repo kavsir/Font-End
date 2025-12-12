@@ -1,57 +1,57 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Load language JSON
+    // Load file ngon ngu JSON
     fetch("/frame/lang/index.json")  
-        .then(res => res.json())
-        .then(langData => {
-            let currentLang = loadLanguage();
+        .then(Phanhoi => Phanhoi.json())
+        .then(Dulieungonngu => {
+            let Ngonnguhientai = Taingonngu();
 
-            applyLanguage(langData, currentLang);
+            Apdungngonngu(Dulieungonngu, Ngonnguhientai);
 
-            // Khi bấm nút đổi ngôn ngữ
-            document.querySelectorAll(".lang-flag").forEach(flag => {
-                flag.addEventListener("click", () => {
-                    const selectedLang = flag.getAttribute("data-lang");
+            // Khi bam nut doi ngon ngu
+            document.querySelectorAll(".lang-flag").forEach(Co => {
+                Co.addEventListener("click", () => {
+                    const Ngonnguduocchon = Co.getAttribute("data-lang");
 
-                    saveLanguage(selectedLang);
-                    applyLanguage(langData, selectedLang);
+                    Luungonngu(Ngonnguduocchon);
+                    Apdungngonngu(Dulieungonngu, Ngonnguduocchon);
                 });
             });
         });
 });
 
-// Lưu ngôn ngữ người dùng
-function saveLanguage(lang) {
-    localStorage.setItem("lang", lang);
+// Luu ngon ngu nguoi dung
+function Luungonngu(Ngonngu) {
+    localStorage.setItem("lang", Ngonngu);
 }
 
-// Tải ngôn ngữ, nếu chưa có → lấy ngôn ngữ trình duyệt
-function loadLanguage() {
-    let lang = localStorage.getItem("lang");
+// Tai ngon ngu, neu chua co → lay ngon ngu trinh duyet
+function Taingonngu() {
+    let Ngonngu = localStorage.getItem("lang");
 
-    if (!lang) {
-        const browserLang = navigator.language.toLowerCase();
-        if (browserLang.includes("vi")) lang = "vn";
-        else lang = "en";
-        saveLanguage(lang);
+    if (!Ngonngu) {
+        const Ngonngutruycap = navigator.language.toLowerCase();
+        if (Ngonngutruycap.includes("vi")) Ngonngu = "vn";
+        else Ngonngu = "en";
+        Luungonngu(Ngonngu);
     }
-    return lang;
+    return Ngonngu;
 }
 
-// Áp dụng ngôn ngữ cho toàn trang
-function applyLanguage(langData, lang) {
-    // Text bình thường
-    document.querySelectorAll("[data-lang-key]").forEach(el => {
-        const key = el.getAttribute("data-lang-key");
-        if (langData[lang][key]) {
-            el.innerHTML = langData[lang][key];
+// Ap dung ngon ngu cho toan trang
+function Apdungngonngu(Dulieungonngu, Ngonngu) {
+    // Text binh thuong
+    document.querySelectorAll("[data-lang-key]").forEach(Phantu => {
+        const Khoa = Phantu.getAttribute("data-lang-key");
+        if (Dulieungonngu[Ngonngu][Khoa]) {
+            Phantu.innerHTML = Dulieungonngu[Ngonngu][Khoa];
         }
     });
 
     // Placeholder trong input
-    document.querySelectorAll("[data-lang-placeholder]").forEach(input => {
-        const key = input.getAttribute("data-lang-placeholder");
-        if (langData[lang][key]) {
-            input.placeholder = langData[lang][key];
+    document.querySelectorAll("[data-lang-placeholder]").forEach(Oinput => {
+        const Khoa = Oinput.getAttribute("data-lang-placeholder");
+        if (Dulieungonngu[Ngonngu][Khoa]) {
+            Oinput.placeholder = Dulieungonngu[Ngonngu][Khoa];
         }
     });
 }
